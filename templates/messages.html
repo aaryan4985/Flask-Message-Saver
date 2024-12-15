@@ -12,10 +12,8 @@
 
     {% if messages %}
         <ul>
-            {% for line in messages %}
-                {% if line.strip() %}
-                    <li>{{ line }}</li>
-                {% endif %}
+            {% for name, message in messages %}
+                <li><strong>{{ name }}:</strong> {{ message }}</li>
             {% endfor %}
         </ul>
         <form action="{{ url_for('clear_messages') }}" method="POST">
