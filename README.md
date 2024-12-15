@@ -44,7 +44,7 @@ message-collector/
 
 1. **Clone the Repository**:
    ```bash
-   git clone [<repo-url>](https://github.com/aaryan4985/Flask-Message-Saver.git)
+   git clone https://github.com/aaryan4985/Flask-Message-Saver.git
    cd Flask-Message-Saver
    ```
 
@@ -129,7 +129,7 @@ This project helps you learn:
 ## 👤 Author
 
 - Aaryan Pradhan
-- GitHub: [[Your GitHub Profile](#)](https://github.com/aaryan4985)
+- GitHub: https://github.com/aaryan4985
 - Email: pradhanaaryan@gmail.com
 
 ---
