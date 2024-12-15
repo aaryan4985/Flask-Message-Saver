@@ -16,7 +16,12 @@ def contact():
     if request.method == 'POST':
         name = request.form['name']
         message = request.form['message']
-        return f"<h1>Thanks, {name}!</h1><p>Your message: {message}</p><a href='/'>Back to Home</a>"
+        
+        with open('messages.txt', 'a') as file:
+            file.write(f"Name:{name}\nMessage: {message}\n{'-'*50}\n")
+            
+        return f"<h1>Thanks, {name}!</h1><p>Your message has been saved.</p><a href='/'>Back to Home</a>"
+
     return render_template('contact.html')
 
 if __name__ == '__main__':
