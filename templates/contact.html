@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Contact Us</h1>
-    <form method="POST" action="/contact">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <br><br>
-        <button type="submit">Send</button>
-    </form>
-    <a href="/">Back to Home</a>
+<body class="bg-gradient-to-br from-indigo-500 to-pink-500 min-h-screen text-white">
+
+    <div class="flex justify-center items-center h-screen">
+        <form method="POST" class="bg-white text-gray-800 p-8 rounded-lg shadow-lg w-96">
+            <h1 class="text-3xl font-bold mb-4 text-center">Contact Us</h1>
+            <label class="block mb-2 font-semibold">Name:</label>
+            <input type="text" name="name" placeholder="Enter your name"
+                class="w-full border-gray-300 rounded-lg p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <label class="block mb-2 font-semibold">Message:</label>
+            <textarea name="message" rows="4" placeholder="Write your message here..."
+                class="w-full border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+            <button type="submit"
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-600 mt-4">
+                Send Message
+            </button>
+        </form>
+    </div>
+
 </body>
 </html>

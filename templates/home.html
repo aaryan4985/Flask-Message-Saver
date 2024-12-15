@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask-App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Welcome to Flask!</h1>
-    <p>This is the home page.</p>
-    <a href="/about">Go to About Page</a><br>
-    <a href="/contact">Go to Contact Us Page</a><br>
-    <a href="/messages">Go to Messages Page</a><br>
+
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen text-white">
+
+    <!-- Navbar -->
+    <nav class="p-6 bg-gray-900 shadow-md">
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Flask Message Saver</h1>
+            <div class="space-x-6 text-xl">
+                <a href="/" class="hover:text-yellow-300">Home</a>
+                <a href="/contact" class="hover:text-yellow-300">Contact</a>
+                <a href="/messages" class="hover:text-yellow-300">Messages</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-screen" style="background-image: url('https://www.freepik.com/free-photos-vectors/aesthetic-background');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full">
+            <h1 class="text-5xl font-extrabold mb-4 animate__animated animate__fadeIn animate__delay-1s">Welcome to Flask Message Saver</h1>
+            <p class="text-lg mb-6 animate__animated animate__fadeIn animate__delay-1s">Store, manage, and display messages in a sleek web app.</p>
+            <div class="space-x-4">
+                <a href="/contact" class="bg-yellow-500 text-gray-800 px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-600 transform hover:scale-105 transition duration-300">
+                    Leave a Message
+                </a>
+                <a href="/messages" class="bg-transparent border-2 border-yellow-500 text-yellow-500 px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-500 hover:text-gray-800 transform hover:scale-105 transition duration-300">
+                    View Messages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-6 bg-gray-800 text-center">
+        <h2 class="text-3xl font-semibold text-yellow-400 mb-8">Why Choose Us?</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+            <div class="bg-gray-700 p-8 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300">
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Easy to Use</h3>
+                <p class="text-lg text-gray-200">Our simple interface lets you leave and view messages effortlessly.</p>
+            </div>
+            <div class="bg-gray-700 p-8 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300">
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Fast and Responsive</h3>
+                <p class="text-lg text-gray-200">Enjoy lightning-fast loading times with a responsive design.</p>
+            </div>
+            <div class="bg-gray-700 p-8 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300">
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Secure Storage</h3>
+                <p class="text-lg text-gray-200">Your messages are stored securely in an SQLite database.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-center text-yellow-400 py-6 mt-12">
+        <p>&copy; 2024 Flask Message Saver | All Rights Reserved</p>
+    </footer>
+
 </body>
+
 </html>

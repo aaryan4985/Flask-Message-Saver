@@ -2,27 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Saved Messages</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Saved Messages</h1>
-    <a href="/">Back to Home</a>
-    <hr>
+<body class="bg-gray-900 text-white min-h-screen">
+    <div class="container mx-auto p-8">
+        <h1 class="text-4xl font-bold text-center mb-6">Saved Messages</h1>
+        <div class="flex justify-between mb-6">
+            <a href="/" class="text-yellow-400 hover:text-yellow-300">← Back to Home</a>
+            <form action="{{ url_for('clear_messages') }}" method="POST">
+                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                    Clear Messages
+                </button>
+            </form>
+        </div>
 
-    {% if messages %}
-        <ul>
-            {% for name, message in messages %}
-                <li><strong>{{ name }}:</strong> {{ message }}</li>
-            {% endfor %}
-        </ul>
-        <form action="{{ url_for('clear_messages') }}" method="POST">
-            <button type="submit" style="background-color: red; color: white; padding: 10px; border: none; cursor: pointer;">
-                Clear Messages
-            </button>
-        </form>
-    {% else %}
-        <p>No messages saved yet.</p>
-    {% endif %}
+        {% if messages %}
+            <ul class="space-y-4">
+                {% for name, message in messages %}
+                    <li class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <p class="font-semibold text-yellow-400">{{ name }}:</p>
+                        <p class="mt-2">{{ message }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-center text-lg mt-4">No messages saved yet.</p>
+        {% endif %}
+    </div>
 </body>
 </html>
