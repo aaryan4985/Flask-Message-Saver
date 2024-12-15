@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Messages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Saved Messages</h1>
+    <a href="/">Back to Home</a>
+    <hr>
+
+    {% if messages %}
+        <ul>
+            {% for line in messages %}
+                {% if line.strip() %}
+                    <li>{{ line }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <form action="{{ url_for('clear_messages') }}" method="POST">
+            <button type="submit" style="background-color: red; color: white; padding: 10px; border: none; cursor: pointer;">
+                Clear Messages
+            </button>
+        </form>
+    {% else %}
+        <p>No messages saved yet.</p>
+    {% endif %}
+</body>
+</html>
